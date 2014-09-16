@@ -96,6 +96,12 @@
                         <customfilefield customfield="field" ng-if="field.ControlType == 'File' && field.DisplayToUser"></customfilefield>
                         <customtextfield customfield="field" ng-if="field.ControlType == 'Text' && field.DisplayToUser"></customtextfield>
                         <customselectionfield customfield="field" ng-if="field.ControlType == 'Selection' && field.DisplayToUser"></customselectionfield>
+                        <div ng-if="field.Name == 'FieldSalesRep'">
+                            <label>{{field.Label || field.Name | r}}</label>
+                            <div>
+                                {{field.Value}}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

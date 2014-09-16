@@ -88,7 +88,7 @@ four51.app.factory('Product', ['$resource', '$451', 'Security', 'User', function
 			//store.set(_cacheName + product.InteropID, product);
 			_then(success, product);
 	     });
-    }
+    };
 
     var _search = function(categoryInteropID, searchTerm, relatedProductsGroupID, success, page, pagesize) {
 	    if(!categoryInteropID && !searchTerm && !relatedProductsGroupID){
@@ -124,10 +124,25 @@ four51.app.factory('Product', ['$resource', '$451', 'Security', 'User', function
 			    _then(success, productCache, products.Count);
 		    });
 	    }
-    }
+    };
+
+    var _quick = function(search) {
+        var criteria = {
+            'CategoryInteropID': null,
+            'SearchTerms': search || '',
+            'Page': 1,
+            'PageSize': 100
+        };
+
+        var call = $resource($451.api('Products')).get(criteria).$promise.then(function(products) {
+            return products.List;
+        });
+        return call;
+    };
 	
 	return {
         get: _get,
-        search: _search
+        search: _search,
+        quick: _quick
     }
 }]);

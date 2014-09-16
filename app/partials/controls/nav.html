@@ -80,6 +80,29 @@
                         </ul>
                     </li>
                 </ul>
+                <ul class="pull-right">
+                    <li>
+                        <span class="btn-group" dropdown>
+                            <button type="button" class="btn btn-default dropdown-toggle" ng-disabled="disabled" style="border: none; color:#fff;background-color: transparent;padding: 20px 15px;">Language <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">French</a></li>
+                            </ul>
+                        </span>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href='http://server.iad.liveperson.net/hc/30438524/?cmd=file&file=visitorWantsToChat&site=30438524&byhref=1&imageUrl=http://images.liveperson.com/lp/30438524'
+                           target='chat30438524'
+                           onClick="javascript:window.open('http://server.iad.liveperson.net/hc/30438524/?cmd=file&file=visitorWantsToChat&site=30438524&imageUrl=http://images.liveperson.com/lp/30438524&referrer='+escape(document.location),'chat30438524','width=472,height=320');return false;" >
+                            <!--<img src='http://server.iad.liveperson.net/hc/30438524/?cmd=repstate&site=30438524&channel=web&&ver=1&imageUrl=http://images.liveperson.com/lp/30438524'
+                                 name='hcIcon' width=165 height=60 border=0>-->
+                            <i class="fa fa-comment"></i>
+                            <span class="text-nav">Live Chat</span>
+                        </a>
+                    </li>
+                </ul>
                 <ul class="nav navbar-nav pull-right">
                     <li class="cart" ng-class="{'active': isActive(['cart', 'checkout'])}">
                         <a id="451qa_cart_link" ng-show="cartCount && user.CurrentOrderID" class="cart" href="cart">

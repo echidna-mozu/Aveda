@@ -7,14 +7,10 @@
             <li>
                 <span id="451_lbl_curcat" class="text-primary" ng-bind-html="currentCategory.Name || '  {{'Categories' | r}}'"></span>
             </li>
-            <li class="pull-right">
-                <a href="search">
-                    <span><i class="fa fa-search text-primary"></i></span>
-                </a>
-            </li>
         </ul>
     </nav>
     <aside class="col-sm-3 col-collapse visible-md visible-lg" ng-if="navStatus.visible">
+        <quickorder></quickorder>
         <div class="panel panel-default panel-nav">
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -27,8 +23,10 @@
                 </ul>
             </nav>
         </div>
+        <announcements></announcements>
     </aside>
     <div class="col-collapse" ng-class="{ 'col-md-8 col-md-offset-1': navStatus.visible }" >
+        <productsearchinput></productsearchinput>
 
         <categorylistview></categorylistview>
 
