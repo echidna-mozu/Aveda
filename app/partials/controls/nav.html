@@ -26,6 +26,12 @@
                             <span class="hidden-xs">{{'Reports' | r}}</span>
                         </a>
                     </li>
+                    <li class="records" ng-class="{'active': isActive('interactionrecords'), 'active-xs': isActive('interactionrecords')}">
+                        <a id="451qa_records_link" href="interactionrecords">
+                            <i class="fa fa-folder"></i>
+                            <span class="hidden-xs">{{'Interaction Records' | r}}</span>
+                        </a>
+                    </li>
                     <li ng-class="{'active': isActive(['admin', 'addresses', 'address', 'messages', 'message', 'favoriteorders'])}">
                         <a id="451qa_acct_link" href="admin" class="hidden-md hidden-lg">
                             <i class="fa fa-cog"></i>
@@ -98,7 +104,7 @@
                            onClick="javascript:window.open('http://server.iad.liveperson.net/hc/30438524/?cmd=file&file=visitorWantsToChat&site=30438524&imageUrl=http://images.liveperson.com/lp/30438524&referrer='+escape(document.location),'chat30438524','width=472,height=320');return false;" >
                             <!--<img src='http://server.iad.liveperson.net/hc/30438524/?cmd=repstate&site=30438524&channel=web&&ver=1&imageUrl=http://images.liveperson.com/lp/30438524'
                                  name='hcIcon' width=165 height=60 border=0>-->
-                            <i class="fa fa-comment"></i>
+                            <i class="fa fa-comments"></i>
                             <span class="text-nav">Live Chat</span>
                         </a>
                     </li>

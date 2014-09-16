@@ -91,7 +91,17 @@
 //== Type
 
 //== Miscellaneous
-
+.padded-toolbar{
+  background-color:@padded-toolbar-bg;
+  margin:15px 0 10px;
+  padding:5px 5px 5px 0;
+  .border-top-radius(@border-radius-large);
+  .border-bottom-radius(@border-radius-large);
+  border:1px solid darken(@padded-toolbar-bg, 5);
+  .btn-group{
+    width:auto;
+  }
+}
 
 //
 // Custom mixins ** 451

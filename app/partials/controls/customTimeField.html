@@ -1,5 +1,4 @@
 <div>
-    <label>{{customfield.Label || customfield.Name}}</label>
     <div ng-class="{'input-group':(customfield.Prefix || customfield.Suffix && !(hidesuffix && hideprefix))}">
         <span class="input-group-addon" ng-if="customfield.Prefix && !hideprefix && !((customfield.Prefix | r) == '')">{{customfield.Prefix}}</span>
         <div ng-model="customfield.Value">

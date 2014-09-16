@@ -6139,11 +6139,10 @@ button::-moz-focus-inner {
     padding-left: 25px;
   }
 }
+.view-form-icon.view-form-icon-input-group .input-group-addon {
+  background-color: transparent;
+}
 .view-form-icon.view-form-icon-input-group .input-group-addon:first-of-type:before {
-  content: "\f044";
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
   text-decoration: inherit;
   padding-right: 5px;
   padding-lefT: 5px;
@@ -6163,7 +6162,6 @@ button::-moz-focus-inner {
     text-align: left;
     padding: 5px 0;
     border-radius: 0;
-    background-color: #fff;
   }
 }
 .view-form-icon.view-form-icon-input-group i {
@@ -6210,20 +6208,27 @@ button::-moz-focus-inner {
 .view-form-icon select,
 .view-form-icon text,
 .view-form-icon textarea {
-  padding-left: 25px;
+  padding-left: 30px;
 }
 .view-form-icon i {
   color: #cccccc;
-  left: 10px;
+  left: 0;
   position: absolute;
   top: 13px;
   z-index: 2;
+  width: 30px;
+  text-align: center;
 }
 .view-form-icon .btn i {
   position: relative;
   left: auto;
   top: auto;
   color: inherit;
+}
+.view-form-icon .col-md-4 i,
+.view-form-icon .col-xs-6 i,
+.view-form-icon .col-xs-9 i {
+  left: 5px;
 }
 @media (max-width: 767px) {
   textarea,
@@ -10014,4 +10019,17 @@ table[datepicker] {
 }
 .fa-bomb:before {
   content: "\f1e2";
+}
+.padded-toolbar {
+  background-color: #dddddd;
+  margin: 15px 0 10px;
+  padding: 5px 5px 5px 0;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border: 1px solid #d0d0d0;
+}
+.padded-toolbar .btn-group {
+  width: auto;
 }
