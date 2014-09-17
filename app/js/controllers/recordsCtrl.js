@@ -28,13 +28,8 @@ function ($scope, $location, $451, Records) {
         $scope.showForm = false;
     };
 
-    $scope.save = function(existing) {
-        var variant = {};
-        variant.ProductInteropID = $scope.product.InteropID;
-        variant.Specs = angular.copy($scope.Variant.Specs);
-        variant.InteropID = existing ? existing : null;
-
-        Records.saveRecord(variant, function(record) {
+    $scope.save = function() {
+        Records.saveRecord($scope.Variant, $scope.product, function(record) {
             initialize();
             $scope.showForm = false;
         });

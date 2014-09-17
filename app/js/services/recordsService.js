@@ -16,7 +16,8 @@ four51.app.factory('Records', ['$resource', '$451', 'Security', 'Product', 'Vari
         });
     };
 
-    var _saveRecord = function(variant, success) {
+    var _saveRecord = function(variant, product, success) {
+        variant.ProductInteropID = product.InteropID;
         Variant.save(variant, function(v) {
             _then(success, v);
         });

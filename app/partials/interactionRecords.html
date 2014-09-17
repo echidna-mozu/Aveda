@@ -3,13 +3,13 @@
         <h1>Interaction Records</h1>
         <div class="btn btn-primary" ng-click="createNew()" ng-hide="showForm"><i class="fa fa-plus-circle"></i> Create New Interaction Record</div>
     </div>
-    <div class="row" ng-show="showForm">
+    <div class="row" ng-if="showForm">
         <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
             <interactionrecord></interactionrecord>
         </div>
     </div>
 
-    <div class="well">
+    <div class="well" ng-show="records.length > 0">
         <loadingindicator ng-show="loadingProductIndicator"></loadingindicator>
         <div ng-repeat="record in records">
             <i class="fa fa-edit" style="cursor: pointer;" ng-click="editRecord(record)"></i> {{record.Specs.Description.Value}}
