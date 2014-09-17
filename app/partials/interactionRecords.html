@@ -9,10 +9,25 @@
         </div>
     </div>
 
-    <div class="well" ng-show="records.length > 0">
+    <div ng-show="records.length > 0" class="row">
         <loadingindicator ng-show="loadingProductIndicator"></loadingindicator>
-        <div ng-repeat="record in records">
-            <i class="fa fa-edit" style="cursor: pointer;" ng-click="editRecord(record)"></i> {{record.Specs.Description.Value}}
+        <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <table class="table table-striped table-hover" style="background-color: #FFF">
+                <thead>
+                    <tr>
+                        <th>Edit</th>
+                        <th>Description</th>
+                        <th>More Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="record in records">
+                        <td><i class="fa fa-edit" style="cursor: pointer;" ng-click="editRecord(record)"></i></td>
+                        <td>{{record.Specs.Description.Value}}</td>
+                        <td>{{record.Specs.Notes.Value}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>

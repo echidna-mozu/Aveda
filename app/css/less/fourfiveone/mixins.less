@@ -431,7 +431,7 @@ button::-moz-focus-inner {
 //** container to work with 'navbar-fixed-top position fixed/relative switching on focus' for mobile; adjusts for bootstrap fixed nav floating
 .container-view {
   &:extend(.container all);
-  margin-top: 45px;
+  margin-top: 100px;
 }
 
 //== Container sizes
@@ -459,6 +459,14 @@ button::-moz-focus-inner {
           color:@navbar-default-link-active-bg;
           z-index: 5;
           display: block;
+        }
+      }
+      &.pull-right{
+        li ul li {
+          width: 100%;
+          a {
+            padding: 10px 20px;
+          }
         }
       }
       &.pull-left {
@@ -494,7 +502,7 @@ button::-moz-focus-inner {
 
       &.pull-right {
         li a {
-          padding: 20px 10px;
+          padding: @nav-link-padding;
           // cart icon
           i:first-of-type {
             border-radius: 50%;
