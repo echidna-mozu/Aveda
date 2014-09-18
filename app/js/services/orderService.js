@@ -34,7 +34,8 @@ four51.app.factory('Order', ['$resource', '$rootScope', '$451', 'Security', 'Err
 	}
 
 	var _get = function(id, success) {
-		var currentOrder = store.get('451Cache.Order.' + id);
+		//var currentOrder = store.get('451Cache.Order.' + id);
+        var currentOrder = null;
 		currentOrder ? (function() { _extend(currentOrder);	_then(success, currentOrder); })() :
 			$resource($451.api('order/:id'), { id: '@id' }).get({ id: id }).$promise.then(function(o) {
 				_extend(o);
