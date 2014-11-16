@@ -1,6 +1,7 @@
 <style>
 	.view-form-icon .quantity div input {
 		height: 34px;
+		font-size: 20px;
 	}
 </style>
 <section class="user-view">
@@ -9,7 +10,10 @@
 			<h3 class="panel-title">{{'Order Entry' | r}}</h3>
 		</div>
 		<div class="panel-body">
-			<div class="col-sm-9 col-sm-offset-3 view-form-icon">
+			<div class="col-sm-3">
+				<shortcartview></shortcartview>
+			</div>
+			<div class="col-sm-9 view-form-icon">
 				<form name="quick_add_form" ng-submit="addToOrder()">
 					<div class="row view-form-icon">
 						<div class="col-sm-8">

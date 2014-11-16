@@ -1,12 +1,9 @@
-<div class="451qa_prod_item row" ng-swipe-left="showSwipe = true">
+<div class="row" ng-swipe-left="showSwipe = true">
     <div class="col-sm-4 text-center">
         <a href="product/{{LineItem.Product.InteropID}}">
             <figure ng-show="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl" >
                 <img ng-src="{{LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl}}"/>
             </figure>
-            <div class="empty" ng-hide="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
-                <span class="fa empty"><i class="fa fa-camera"></i></span>
-            </div>
         </a>
     </div>
     <div class="col-sm-8 text-left">
