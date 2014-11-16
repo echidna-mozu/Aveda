@@ -3,33 +3,23 @@
         <form name="cart">
             <div>
                 <h4>
-                    {{'Review' | r}} {{currentOrder.LineItems.length}} {{'Item' + (currentOrder.LineItems.length > 1 ? 's' : '') | rl}} in your {{'Cart' | rl}}
+                    {{'Current Order' | r}} ({{currentOrder.LineItems.length}}) {{'Item' + (currentOrder.LineItems.length > 1 ? 's' : '') | rl}}
                 </h4>
-                <div ng-repeat="Item in currentOrder.LineItems">
-                    <h5 class="col-md-2 col-xs-12">
+                <div class="row" ng-repeat="Item in currentOrder.LineItems">
+                    <h5 class="col-xs-2">
                         {{Item.ProductIDText}}
                     </h5>
-                    <div class="col-md-4 col-xs-12">
-                        <p>
-                            {{Item.Product.Name}}
-                        </p>
-                        <ul>
-                            <li ng-repeat="spec in item.Specs | filter:{'CanSetForLineItem':true} ">{{spec.Name}} : {{spec.Value}}</li>
-                        </ul>
-
+                    <div class="col-xs-6">
+                        {{Item.Product.Name}}
                     </div>
-                    <div class="col-md-2 col-xs-4" ng-if="!(user.Permissions.contains('HidePricing'))">
-                        {{Item.UnitPrice | currency}}
-                    </div>
-                    <div class="col-md-2 col-xs-4">
+                    <div class="col-xs-2">
                         {{Item.Quantity}}
                     </div>
-                    <div class="col-md-2 col-xs-4" ng-if="!(user.Permissions.contains('HidePricing'))">
+                    <div class="col-xs-2">
                         {{Item.LineTotal | currency}}
                     </div>
                 </div>
             </div>
         </form>
     </div>
-
 </div>
