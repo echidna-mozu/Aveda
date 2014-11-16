@@ -6,21 +6,19 @@
 		<div class="panel-body">
 			<div class="col-sm-9 col-sm-offset-3 view-form-icon">
 				<form name="quick_add_form" ng-submit="addToOrder()">
-					<div class="view-form-icon">
-						<div>
+					<div class="row view-form-icon">
+						<div class="col-sm-6">
 							<input type="text" ng-model="LineItem.Product" placeholder="{{'Item Number' | r}}" typeahead="product as product.Name for product in getEligibleProducts($viewValue)"
 							       typeahead-loading="loadingQuickAddProduct" typeahead-wait-ms="500" class="form-control" required>
 							<i class="fa fa-spin"></i>
 						</div>
-					</div>
-					<hr />
-					<div class="row">
-						<div class="col-sm-6 view-form-icon">
-							<!--<input ng-disabled="!quickadd.Product" name="Quantity" class="form-control" type="text" required ng-model="quickadd.Quantity" placeholder="{{'Qty' | r}}" />-->
+						<div class="col-sm-3">
 							<quantityfield ng-disabled="!LineItem.Product" required="true" lineitem="LineItem" class="quantity" />
 						</div>
-						<div class="col-sm-6">
-							<input class="btn btn-primary pull-right" type="submit" ng-disabled="quick_add_form.$invalid" value="{{'Add To Cart' | r}}" />
+						<div class="col-sm-3">
+							<button class="btn btn-primary pull-right" type="submit" ng-disabled="quick_add_form.$invalid" value="{{'Add To Cart' | r}}">
+								{{(LineItem.LineTotal || variantLineItemsOrderTotal) | culturecurrency}} {{'Add To Cart' | r}}
+							</button>
 						</div>
 					</div>
 					<div class="row">

@@ -30,7 +30,6 @@ four51.app.controller('CsrCtrl', ['$scope', 'Order', 'User', 'Product', 'Product
 					User.save($scope.user, function(user){
 						$scope.user = user;
 					});
-					$scope.quickAddMessage = "Item added to cart";
 					$scope.LineItem = {};
 				},
 				function(ex) {
@@ -44,7 +43,7 @@ four51.app.controller('CsrCtrl', ['$scope', 'Order', 'User', 'Product', 'Product
 four51.app.directive('quickorderproductview', function() {
 	var obj = {
 		restrict: "E",
-		templateUrl:'partials/controls/shortProductView.html',
+		templateUrl:'partials/controls/quickProductView.html',
 		controller: ['$scope', function($scope) {
 
 		}]
