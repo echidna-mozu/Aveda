@@ -19,6 +19,12 @@
                             <span class="hidden-xs">{{'Products' | rc}}</span>
                         </a>
                     </li>
+                    <li class="csr" ng-if="user.Permissions.contains('ViewQuickOrderEntry')" ng-class="{'active': isActive('csr'), 'active-xs': isActive('csr')}">
+                        <a ng-show="Four51User.isAuthenticated()" href="csr">
+                            <i class="fa fa-icon-gears"></i>
+                            <span class="hidden-xs">{{'Order Entry' | rc}}</span>
+                        </a>
+                    </li>
                     <li class="order" ng-class="{'active': isActive('order'), 'active-xs': isActive('favoriteorders')}">
                         <a id="451qa_order_link" href="order">
                             <i class="fa fa-clipboard"></i>
@@ -31,7 +37,7 @@
                             <span class="hidden-xs">{{'Reports' | r}}</span>
                         </a>
                     </li>
-                    <li ng-show="user.Username == 'csrA@aveda.com'" class="records" ng-class="{'active': isActive('interactionrecords'), 'active-xs': isActive('interactionrecords')}">
+                    <li ng-if="user.Permissions.contains('ViewQuickOrderEntry')" class="records" ng-class="{'active': isActive('interactionrecords'), 'active-xs': isActive('interactionrecords')}">
                         <a id="451qa_records_link" href="interactionrecords">
                             <i class="fa fa-folder"></i>
                             <span class="hidden-xs">{{'Interaction Records' | r}}</span>
