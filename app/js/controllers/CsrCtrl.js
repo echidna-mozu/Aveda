@@ -40,3 +40,15 @@ four51.app.controller('CsrCtrl', ['$scope', 'Order', 'User', 'Product', 'Product
 		};
 	}
 ]);
+
+four51.app.directive('quickorderproductview', function() {
+	var obj = {
+		restrict: "E",
+		templateUrl:'partials/controls/shortProductView.html',
+		controller: ['$scope', function($scope) {
+
+		}]
+	};
+
+	return obj;
+});
