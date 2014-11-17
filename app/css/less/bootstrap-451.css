@@ -10059,3 +10059,48 @@ table[datepicker] {
 .padded-toolbar .btn-group {
   width: auto;
 }
+.quick-add-searchbar {
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #dddddd;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 10px;
+}
+.minicart-detail {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid #dddddd;
+  padding: 10px;
+  background-color: #fff;
+  z-index: 20;
+}
+.minicart-detail .row:not(.lineitem-row) {
+  padding: 10px 0;
+}
+.minicart-detail .row:not(.lineitem-row):not(.top-item) {
+  border-top: 1px dashed #ddd;
+}
+@media (max-width: 767px) {
+  .minicart-detail .row.lineitem-row {
+    font-size: 0.8em;
+  }
+}
+.minicart-detail .row.lineitem-row i.fa-times {
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.minicart-detail a {
+  display: block;
+}
+.minicart-detail figure {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.minicart-detail figure img {
+  max-width: 100%;
+}

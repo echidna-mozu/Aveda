@@ -5,33 +5,43 @@
 	}
 </style>
 <section class="user-view">
+    <div
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title">{{'Order Entry' | r}}</h3>
 		</div>
 		<div class="panel-body">
-			<div class="col-sm-8 view-form-icon">
+			<div class="col-md-7 view-form-icon">
 				<form name="quick_add_form" ng-submit="addToOrder()">
-					<div class="row view-form-icon">
-						<div class="col-sm-8">
-							<input type="text" ng-model="LineItem.Product" placeholder="{{'Product Search' | r}}" typeahead="product as product.Name for product in getEligibleProducts($viewValue)"
-							       typeahead-loading="loadingQuickAddProduct" typeahead-wait-ms="500" class="form-control" required>
-							<i class="fa fa-spin"></i>
-						</div>
-						<div class="col-sm-2">
-							<quantityfield ng-disabled="!LineItem.Product" required="true" lineitem="LineItem" class="quantity" />
-						</div>
-						<div class="col-sm-2">
-							<button class="btn btn-primary pull-right" type="submit" ng-disabled="quick_add_form.$invalid" value="{{'Add To Cart' | r}}">
-								{{(LineItem.LineTotal || variantLineItemsOrderTotal) | culturecurrency}} {{'Add To Cart' | r}}
-							</button>
-						</div>
-					</div>
-					<div class="row" ng-show="LineItem.Product">
-						<div class="col-sm-9">
-							<quickorderproductview></quickorderproductview>
-						</div>
-					</div>
+                    <div class="quick-add-searchbar">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="view-form-icon">
+                                    <div style="margin-top:0;">
+                                        <input type="text"
+                                               ng-model="LineItem.Product"
+                                               placeholder="{{'Product Search' | r}}"
+                                               typeahead="product as product.Name for product in getEligibleProducts($viewValue)"
+                                               typeahead-loading="loadingQuickAddProduct"
+                                               typeahead-wait-ms="500"
+                                               class="form-control"
+                                               required>
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2 col-lg-3">
+                                <quantityfield ng-disabled="!LineItem.Product" required="true" lineitem="LineItem" class="quantity" />
+                            </div>
+                            <div class="col-sm-3 col-md-4 col-lg-3">
+                                <button class="btn btn-primary btn-block" ng-class="{'btn-success':!quick_add_form.$invalid}" type="submit" ng-disabled="quick_add_form.$invalid" value="{{'Add To Cart' | r}}">
+                                    {{(LineItem.LineTotal || variantLineItemsOrderTotal) | culturecurrency}} {{'Add To Cart' | r}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <quickorderproductview ng-show="LineItem.Product"></quickorderproductview>
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="view-response-message alert-success text-center" style="padding-top:0; padding-bottom:0;" alert-show="currentOrder">
@@ -41,7 +51,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-sm-4" ng-show="currentOrder">
+			<div class="col-md-4 col-md-offset-1" ng-show="currentOrder">
 				<shortcartview></shortcartview>
 			</div>
 		</div>

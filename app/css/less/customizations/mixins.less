@@ -113,6 +113,53 @@
   }
 }
 
+
+.quick-add-searchbar {
+  margin-bottom:15px;
+  background-color:@panel-default-heading-bg;
+  border:1px solid @panel-default-border;
+  .border-top-radius(@border-radius-base);
+  .border-bottom-radius(@border-radius-base);
+  padding:10px;
+}
+
+.minicart-detail {
+  .border-top-radius(@border-radius-base);
+  .border-bottom-radius(@border-radius-base);
+  border:1px solid @panel-default-border;
+//  .box-shadow(0px 6px 12px 0px rgba(0,0,0,0.176));
+  padding:@grid-gutter-width;
+  background-color:#fff;
+  z-index:20;
+  .row{
+    &:not(.lineitem-row) {
+      &:not(.top-item){
+        border-top:1px dashed #ddd;
+      }
+      padding:10px 0;
+    }
+    &.lineitem-row {
+      @media (max-width: @screen-xs-max) {
+        font-size:0.8em;
+      }
+
+      i.fa-times {
+        font-size:1.3em;
+        cursor: pointer;
+      }
+    }
+  }
+  a {
+    display:block;
+  }
+  figure {
+    border:1px solid #ddd;
+    padding:5px;
+    img {
+      max-width:100%;
+    }
+  }
+}
 //
 // Custom mixins ** 451
 // --------------------------------------------------
