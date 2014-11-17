@@ -1,36 +1,37 @@
 <style>
-    .fa-remove:before {
-        content: "";
+    .fa-minus-square:before {
+        content: "\f146";
     }
 </style>
-<div class="short-cart-view">
-    <div ng-if="currentOrder" class="CartDetail">
-        <form name="cart">
-            <div>
-                <h4>
-                    {{'Current Order' | r}} ({{currentOrder.LineItems.length}}) {{'Item' + (currentOrder.LineItems.length > 1 ? 's' : '') | rl}}
-                </h4>
-                <div class="row" ng-repeat="Item in currentOrder.LineItems">
-                    <div class="col-xs-7">
-                        <div>{{Item.Product.Name}}</div>
-                        <div><small>{{Item.ProductIDText}}</small></div>
-                    </div>
-                    <div class="col-xs-2">
-                        {{Item.Quantity}}
-                    </div>
-                    <div class="col-xs-2">
-                        {{Item.LineTotal | currency}}
-                    </div>
-                    <div class="col-xs-1">
-                        <i ng-click="removeLineItem(Item)" style="cursor: pointer;" class="fa fa-remove"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button redirect="checkout" class="btn btn-primary pull-right">Checkout</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+<div class="short-cart-view" ng-show="currentOrder">
+    <table class="table table-striped table-hover" style="background-color: #FFF">
+        <thead>
+            <tr>
+                <th>{{'Product' | r}}</th>
+                <th>{{'Quantity' | r}}</th>
+                <th>{{'Total' | r}}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="Item in currentOrder.LineItems">
+                <td>
+                    <div>{{Item.Product.Name}}</div>
+                    <div><small>{{Item.ProductIDText}}</small></div>
+                </td>
+                <td>
+                    {{Item.Quantity}}
+                </td>
+                <td>
+                    {{Item.LineTotal | currency}}
+                </td>
+                <td>
+                    <i ng-click="removeLineItem(Item)" style="cursor: pointer;" class="fa fa-minus-square"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <button redirect="checkout" class="btn btn-primary btn-xs pull-right">Checkout</button>
 </div>
