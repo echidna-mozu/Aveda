@@ -22,17 +22,17 @@
                 <td>
                     {{Item.Quantity}}
                 </td>
-                <td class="pull-right">
-                    {{Item.LineTotal | currency}}
+                <td>
+                    <span class="pull-right">{{Item.LineTotal | currency}}</span>
                 </td>
                 <td>
                     <i ng-click="removeLineItem(Item)" style="cursor: pointer;" class="fa fa-trash-o"></i>
                 </td>
             </tr>
-            <tr>
+            <tr class="info">
                 <td></td>
-                <td></td>
-                <td class="pull-right">{{currentOrder.Subtotal | currency}}</td>
+                <td><strong>Subtotal</strong></td>
+                <td><span class="pull-right">{{currentOrder.Subtotal | currency}}</span></td>
                 <td>
                     <i ng-click="cancelOrder()" style="cursor: pointer;" class="fa fa-trash-o"></i>
                 </td>

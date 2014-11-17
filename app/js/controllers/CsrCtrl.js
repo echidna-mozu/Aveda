@@ -10,6 +10,7 @@ four51.app.controller('CsrCtrl', ['$scope', 'Order', 'User', 'Product', 'Product
 
 		$scope.$watch('LineItem.Product.InteropID', function(id) {
 			if (!id) return;
+			console.log('calling ' + id);
 			ProductDisplayService.getProductAndVariant(id, null, function(product) {
 				$scope.LineItem.Product = product.product;
 				$scope.LineItem.Variant = product.variant;
