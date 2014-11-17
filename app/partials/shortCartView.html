@@ -1,3 +1,8 @@
+<style>
+    .fa-remove:before {
+        content: "";
+    }
+</style>
 <div class="short-cart-view">
     <div ng-if="currentOrder" class="CartDetail">
         <form name="cart">
@@ -17,9 +22,7 @@
                         {{Item.LineTotal | currency}}
                     </div>
                     <div class="col-xs-1">
-                        <span class="btn btn-danger" ng-click="removeLineItem(Item.InteropID)">
-                            <i title="Remove" rel="tooltip" class="fa fa-remove"></i>
-                        </span>
+                        <i ng-click="removeLineItem(Item)" style="cursor: pointer;" class="fa fa-remove"></i>
                     </div>
                 </div>
                 <div class="row">
