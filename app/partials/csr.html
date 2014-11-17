@@ -10,10 +10,7 @@
 			<h3 class="panel-title">{{'Order Entry' | r}}</h3>
 		</div>
 		<div class="panel-body">
-			<div class="col-sm-5">
-				<shortcartview></shortcartview>
-			</div>
-			<div class="col-sm-7 view-form-icon">
+			<div class="col-sm-8 view-form-icon">
 				<form name="quick_add_form" ng-submit="addToOrder()">
 					<div class="row view-form-icon">
 						<div class="col-sm-8">
@@ -43,6 +40,9 @@
 						</div>
 					</div>
 				</form>
+			</div>
+			<div class="col-sm-4">
+				<shortcartview></shortcartview>
 			</div>
 		</div>
 	</div>
