@@ -17,8 +17,8 @@
                         {{Item.LineTotal | currency}}
                     </div>
                     <div class="col-xs-1">
-                        <span>
-                            <button ng-click="removeLineItem(Item.InteropID)"><i title="Remove" rel="tooltip" class="fa fa-remove text-primary"></i></button>
+                        <span class="btn btn-danger" ng-click="removeLineItem(Item.InteropID)">
+                            <i title="Remove" rel="tooltip" class="fa fa-remove"></i>
                         </span>
                     </div>
                 </div>
