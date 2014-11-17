@@ -10,11 +10,15 @@
 			<h3 class="panel-title">{{'Order Entry' | r}}</h3>
 		</div>
 		<div class="panel-body">
-			<div class="col-sm-8 view-form-icon">
+			<div class="col-sm-6 view-form-icon">
 				<form name="quick_add_form" ng-submit="addToOrder()">
+					<div class="row">
+						<div class="col-sm-8">{{'Product Search' | r}}</div>
+						<div class="col-sm-4">{{'Quantity' | r}}</div>
+					</div>
 					<div class="row view-form-icon">
 						<div class="col-sm-8">
-							<input type="text" ng-model="LineItem.Product" placeholder="{{'Item Number' | r}}" typeahead="product as product.Name for product in getEligibleProducts($viewValue)"
+							<input type="text" ng-model="LineItem.Product" placeholder="{{'Product Search' | r}}" typeahead="product as product.Name for product in getEligibleProducts($viewValue)"
 							       typeahead-loading="loadingQuickAddProduct" typeahead-wait-ms="500" class="form-control" required>
 							<i class="fa fa-spin"></i>
 						</div>
@@ -41,7 +45,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-4 col-offset-2">
 				<shortcartview></shortcartview>
 			</div>
 		</div>
