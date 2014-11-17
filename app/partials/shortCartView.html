@@ -1,12 +1,9 @@
 <style>
-    .fa-minus-square:before {
-        content: "\f146";
-    }
     .fa-trash-o:before {
         content: "\f014";
     }
 </style>
-<div class="short-cart-view" ng-show="currentOrder">
+<div class="short-cart-view">
     <table class="table table-striped table-hover" style="background-color: #FFF">
         <thead>
             <tr>
@@ -44,5 +41,5 @@
     </table>
 </div>
 <div>
-    <button redirect="checkout" class="btn btn-primary btn-xs pull-right"><i class="fa fa-shopping-cart">&nbsp;Checkout</i></button>
+    <button redirect="checkout" class="btn btn-primary pull-right"><i class="fa fa-shopping-cart">&nbsp;Checkout</i></button>
 </div>
