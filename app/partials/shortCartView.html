@@ -6,11 +6,9 @@
                     {{'Current Order' | r}} ({{currentOrder.LineItems.length}}) {{'Item' + (currentOrder.LineItems.length > 1 ? 's' : '') | rl}}
                 </h4>
                 <div class="row" ng-repeat="Item in currentOrder.LineItems">
-                    <div class="col-xs-2">
-                        {{Item.ProductIDText}}
-                    </div>
-                    <div class="col-xs-5">
-                        {{Item.Product.Name}}
+                    <div class="col-xs-7">
+                        <div>{{Item.Product.Name}}</div>
+                        <div><small>{{Item.ProductIDText}}</small></div>
                     </div>
                     <div class="col-xs-2">
                         {{Item.Quantity}}
@@ -19,7 +17,9 @@
                         {{Item.LineTotal | currency}}
                     </div>
                     <div class="col-xs-1">
-                        <span><i title="Remove" rel="tooltip" class="fa fa-remove text-primary"></i></span>
+                        <span>
+                            <button ng-click="removeLineItem(Item.InteropID)"><i title="Remove" rel="tooltip" class="fa fa-remove text-primary"></i></button>
+                        </span>
                     </div>
                 </div>
                 <div class="row">
