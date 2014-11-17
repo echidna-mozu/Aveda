@@ -63,6 +63,7 @@ four51.app.factory('ProductDisplayService', ['$sce', '$451', 'Variant', 'Product
 	function productViewScope(scope){
 		scope.lineItemErrors = [];
 		scope.$watch("LineItem", function(){
+			if (!arguments[0].Product) return;
 			scope.setAddToOrderErrors();
 		}, true);
 		scope.$watch("variantLineItems", function(){
