@@ -150,6 +150,7 @@ four51.app.factory('ProductDisplayService', ['$sce', '$451', 'Variant', 'Product
 			if(p) return $sce.trustAsHtml(p.Description);
 		}
 		scope.inventoryDisplay = function(product, variant){
+			if (!product) return null;
 			var qa = product.IsVariantLevelInventory ? variant : product;
 			if(qa)
 				return qa.QuantityAvailable > 0 ? qa.QuantityAvailable : 0;
